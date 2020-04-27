@@ -1,0 +1,9 @@
+module Charts
+
+ChartView 1.0 ChartView.qml
+DateTimeAxis 1.0 DateTimeAxis.qml
+BarCategoryAxis 1.0 BarCategoryAxis.qml
+BarSet 1.0 BarSet.qml
+LogValueAxis 1.0 LogValueAxis.qml
+StackedBarSeries 1.0 StackedBarSeries.qml
+ValueAxis 1.0 ValueAxis.qml

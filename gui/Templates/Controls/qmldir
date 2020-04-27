@@ -1,0 +1,24 @@
+module Controls
+
+ApplicationWindow 1.0 ApplicationWindow.qml
+BoxShadow 1.0 BoxShadow.qml
+Button 1.0 Button.qml
+CheckBox 1.0 CheckBox.qml
+CheckIndicator 1.0 CheckIndicator.qml
+ComboBox 1.0 ComboBox.qml
+CursorDelegate 1.0 CursorDelegate.qml
+Dialog 1.0 Dialog.qml
+DialogButtonBox 1.0 DialogButtonBox.qml
+ElevationEffect 1.0 ElevationEffect.qml
+Label 1.0 Label.qml
+MenuItem 1.0 MenuItem.qml
+PopUp 1.0 PopUp.qml
+RadioButton 1.0 RadioButton.qml
+RadioIndicator 1.0 RadioIndicator.qml
+RectangularGlow 1.0 RectangularGlow.qml
+ScrollIndicator 1.0 ScrollIndicator.qml
+TextArea 1.0 TextArea.qml
+TextField 1.0 TextField.qml
+ToolBar 1.0 ToolBar.qml
+ToolButton 1.0 ToolButton.qml
+ToolTip 1.0 ToolTip.qml

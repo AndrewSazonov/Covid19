@@ -1,0 +1,49 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Misc
+moc_*
+qrc_*
+*_import.cpp
+*.stash
+*.mem
+*.temp.asm.js
+*.pro.user
+*.qmlproject.user
+*.command
+Makefile
+.DS_Store
+build/debug
+build/release
+build/profile
+build/ios
