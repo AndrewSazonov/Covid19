@@ -13,23 +13,23 @@ Translator::Translator(QApplication *app, QQmlEngine *engine)
 
 void Translator::selectLanguage(const QString &language)
 {
-    ///qDebug() << "language" << language << m_languages[language];
+    qDebug() << "language" << language << m_languages[language];
 
     QString languageCode = m_languages[language];
     QString path = QString(":/gui/Resources/Translations/covidist_%1").arg(languageCode);
 
-    ///qDebug() << "***********" << language << languageCode << path;
+    qDebug() << "***********" << language << languageCode << path;
 
     if (languageCode == "en") {
-        ///qDebug() << "English selected.";
+        qDebug() << "English selected.";
         m_app->removeTranslator(m_translator);
     }
     else if (m_translator->load(path)) {
-        ///qDebug() << "Translation file loaded for: " +  language + " (" + languageCode + ")";
+        qDebug() << "Translation file loaded for: " +  language + " (" + languageCode + ")";
         m_app->installTranslator(m_translator);
     }
     else {
-        ///qDebug() << "Failed to load translation file, falling back to English.";
+        qDebug() << "Failed to load translation file, falling back to English.";
         m_app->removeTranslator(m_translator);
     }
 

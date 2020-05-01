@@ -30,7 +30,7 @@ DataHandler::DataHandler(QObject *parent)
 
 void DataHandler::connectSignals() const
 {
-    ///qDebug() << "connectSignals()";
+    qDebug() << "connectSignals()";
 
     connect(this, &DataHandler::countryChanged, this, &DataHandler::onCountryChanged);
     connect(this, &DataHandler::casesChanged, this, &DataHandler::onCasesChanged);
@@ -62,7 +62,7 @@ void DataHandler::connectSignals() const
 
 bool DataHandler::dataProcessed() const
 {
-    ///qDebug() << "dataProcessed()" << m_dataProcessed;
+    qDebug() << "dataProcessed()" << m_dataProcessed;
 
     return m_dataProcessed;
 }
@@ -71,7 +71,7 @@ bool DataHandler::dataProcessed() const
 
 void DataHandler::setDataProcessed()
 {
-    ///qDebug() << "setDataProcessed()";
+    qDebug() << "setDataProcessed()";
 
     m_dataProcessed = true;
 
@@ -80,14 +80,14 @@ void DataHandler::setDataProcessed()
 
 bool DataHandler::loadingState() const
 {
-    ///qDebug() << "loadingState()" << m_loadingState;
+    qDebug() << "loadingState()" << m_loadingState;
 
     return m_loadingState;
 }
 
 bool DataHandler::downloadingState() const
 {
-    ///qDebug() << "downloadingState()" << m_downloadingState;
+    qDebug() << "downloadingState()" << m_downloadingState;
 
     return m_downloadingState;
 }
@@ -101,7 +101,7 @@ bool DataHandler::showConfirmed() const
 
 void DataHandler::setShowConfirmed(bool showConfirmed)
 {
-    ///qDebug() << "setShowConfirmed()" << m_showConfirmed << showConfirmed;
+    qDebug() << "setShowConfirmed()" << m_showConfirmed << showConfirmed;
 
     if (m_showConfirmed == showConfirmed)
         return;
@@ -113,14 +113,14 @@ void DataHandler::setShowConfirmed(bool showConfirmed)
 
 bool DataHandler::showRecovered() const
 {
-    ///qDebug() << "showRecovered()";
+    qDebug() << "showRecovered()";
 
     return m_showRecovered;
 }
 
 void DataHandler::setShowRecovered(bool showRecovered)
 {
-    ///qDebug() << "setShowRecovered()" << m_showRecovered << showRecovered;
+    qDebug() << "setShowRecovered()" << m_showRecovered << showRecovered;
 
     if (m_showRecovered == showRecovered)
         return;
@@ -137,7 +137,7 @@ bool DataHandler::showDeaths() const
 
 void DataHandler::setShowDeaths(bool showDeaths)
 {
-    ///qDebug() << "setShowDeaths()" << m_showDeaths << showDeaths;
+    qDebug() << "setShowDeaths()" << m_showDeaths << showDeaths;
 
     if (m_showDeaths == showDeaths)
         return;
@@ -154,7 +154,7 @@ bool DataHandler::showActive() const
 
 void DataHandler::setShowActive(bool showActive)
 {
-    ///qDebug() << "setShowActive()" << m_showActive << showActive;
+    qDebug() << "setShowActive()" << m_showActive << showActive;
 
     if (m_showActive == showActive)
         return;
@@ -175,7 +175,7 @@ int DataHandler::yMax() const
 
 void DataHandler::updateYMax()
 {
-    ///qDebug() << "****updateYMax()";
+    qDebug() << "****updateYMax()";
 
     if (!m_confirmedArray.length()
             || !m_recoveredArray.length()
@@ -210,26 +210,26 @@ void DataHandler::updateYMax()
         //const int confirmedYMax = m_confirmedArray[i].toInt();
 
         int yMax = m_confirmedArray[i].toInt() + m_recoveredArray[i].toInt() + m_deathsArray[i].toInt() + m_activeArray[i].toInt();
-        ///qDebug() << i << m_confirmedArray[i].toInt() << m_recoveredArray[i].toInt() << m_deathsArray[i].toInt() << m_activeArray[i].toInt();
+        qDebug() << i << m_confirmedArray[i].toInt() << m_recoveredArray[i].toInt() << m_deathsArray[i].toInt() << m_activeArray[i].toInt();
 
         if (yMax > m_yMax) {
             m_yMax = yMax;
         }
     }
 
-    ///qDebug() << " m_cases" << m_cases;
-    ///qDebug() << " 001 m_yMax" << m_yMax;
+    qDebug() << " m_cases" << m_cases;
+    qDebug() << " 001 m_yMax" << m_yMax;
 
 
     emit yMaxChanged();
 
-    ///qDebug() << " 002 yMaxChanged";
+    qDebug() << " 002 yMaxChanged";
 
 }
 
 void DataHandler::setXMinMap()
 {
-    ///qDebug() << "setXMinMap()";
+    qDebug() << "setXMinMap()";
 
     if (m_dateList.length() == 0) {
         return;
@@ -240,19 +240,19 @@ void DataHandler::setXMinMap()
     m_xMinMap[OneMonthTimePeriod] = m_dateList[m_dateList.length() - m_timePeriodMap[OneMonthTimePeriod]];
     m_xMinMap[TwoMonthsTimePeriod] = m_dateList[m_dateList.length() - m_timePeriodMap[TwoMonthsTimePeriod]];
 
-    ///qDebug() << " m_xMinMap" << m_xMinMap;
+    qDebug() << " m_xMinMap" << m_xMinMap;
 }
 
 QString DataHandler::xMin() const
 {
-    ///qDebug() << "xMin()" << m_xMin;
+    qDebug() << "xMin()" << m_xMin;
 
     return m_xMin;
 }
 
 void DataHandler::updateXMin()
 {
-    ///qDebug() << "updateXMin()";
+    qDebug() << "updateXMin()";
 
     /*
     if (m_timePeriod.isEmpty()) {
@@ -264,10 +264,10 @@ void DataHandler::updateXMin()
     }
     */
 
-    ///qDebug() << "m_timePeriod" << m_timePeriod;
-    ///qDebug() << "m_xMin before" << m_xMin;
+    qDebug() << "m_timePeriod" << m_timePeriod;
+    qDebug() << "m_xMin before" << m_xMin;
     m_xMin = m_xMinMap[m_timePeriod];
-    ///qDebug() << "m_xMin after" << m_xMin;
+    qDebug() << "m_xMin after" << m_xMin;
 
     emit xMinChanged();
 }
@@ -281,7 +281,7 @@ QString DataHandler::xMax() const
 
 void DataHandler::updateXMax()
 {
-    ///qDebug() << "updateXMax()";
+    qDebug() << "updateXMax()";
 
     if (m_dateList.isEmpty()) {
         return;
@@ -289,7 +289,7 @@ void DataHandler::updateXMax()
 
     m_xMax = m_dateList[m_dateList.length() - 1];
 
-    ///qDebug() << "m_xMax" << m_xMax;
+    qDebug() << "m_xMax" << m_xMax;
 
     emit xMaxChanged();
 }
@@ -298,7 +298,7 @@ void DataHandler::updateXMax()
 
 int DataHandler::yTickInterval() const
 {
-    ///qDebug() << "yTickInterval()" << m_yTickInterval;
+    qDebug() << "yTickInterval()" << m_yTickInterval;
 
     return m_yTickInterval;
 }
@@ -319,10 +319,10 @@ const QStringList &DataHandler::xLabels() const
 
 void DataHandler::updateYLabels()
 {
-    ///qDebug() << "-----updateYLabels()";
+    qDebug() << "-----updateYLabels()";
 
 
-    ///qDebug() << " scale" << m_yMin << m_yMax;
+    qDebug() << " scale" << m_yMin << m_yMax;
 
     //m_yTickInterval = qFloor(niceScale.tickSpacing);// (int)niceScale.tickSpacing;
 
@@ -353,7 +353,7 @@ void DataHandler::updateYLabels()
     }
 
 
-    ///qDebug() << " m_yLabels" << m_yLabels;
+    qDebug() << " m_yLabels" << m_yLabels;
 
     emit yLabelsChanged();
 }
@@ -363,18 +363,18 @@ void DataHandler::updateYLabels()
 /*
 void DataHandler::updateYLabels()
 {
-    ///qDebug() << "-----updateYLabels()";
+    qDebug() << "-----updateYLabels()";
 
     NiceScale niceScale;
     niceScale.setMaxTicks(6);
     niceScale.setMinMaxPoints(m_yMin, m_yMax);
 
-    ///qDebug() << " scale" << m_yMin << m_yMax;
-    ///qDebug() << " niceScale" << niceScale.niceMin << niceScale.niceMax << niceScale.tickSpacing;
+    qDebug() << " scale" << m_yMin << m_yMax;
+    qDebug() << " niceScale" << niceScale.niceMin << niceScale.niceMax << niceScale.tickSpacing;
 
     //m_yTickInterval = qFloor(niceScale.tickSpacing);// (int)niceScale.tickSpacing;
 
-    ///qDebug() << " m_yTickInterval" << m_yTickInterval;
+    qDebug() << " m_yTickInterval" << m_yTickInterval;
 
     //emit yTickIntervalChanged();
 
@@ -397,7 +397,7 @@ void DataHandler::updateYLabels()
         tickValue -= niceScale.tickSpacing;
     }
 
-    ///qDebug() << " m_yLabels" << m_yLabels;
+    qDebug() << " m_yLabels" << m_yLabels;
 
     emit yLabelsChanged();
 }
@@ -405,13 +405,14 @@ void DataHandler::updateYLabels()
 
 void DataHandler::updateXLabels()
 {
-    ///qDebug() << "updateXLabels()";
+    qDebug() << "updateXLabels()";
 
-    /*
-    if (m_timePeriod.isEmpty()) {
+    qDebug() << "m_timePeriod" << m_timePeriod;
+    qDebug() << "m_dateList" << m_dateList;
+
+    if (m_dateList.isEmpty()) {
         return;
     }
-    */
 
     m_xLabels.clear();
 
@@ -435,8 +436,8 @@ void DataHandler::updateXLabels()
         }
     }
 
-    ///qDebug() << "m_dateList:" << m_dateList;
-    ///qDebug() << "m_xLabels:" << m_xLabels;
+    qDebug() << "m_dateList:" << m_dateList;
+    qDebug() << "m_xLabels:" << m_xLabels;
 
     emit xLabelsChanged();
 }
@@ -450,8 +451,8 @@ DataHandler::Country DataHandler::country() const
 
 void DataHandler::setCountry(const Country index)
 {
-    ///qDebug() << "setCountry()";
-    ///qDebug() << " index:" << index;
+    qDebug() << "setCountry()";
+    qDebug() << " index:" << index;
 
     /*
     if (m_countryList.indexOf(m_country) == index || index == -1)
@@ -463,22 +464,22 @@ void DataHandler::setCountry(const Country index)
     }
 
     m_country = index;
-    ///qDebug() << " m_country:" << m_country;
+    qDebug() << " m_country:" << m_country;
 
     emit countryChanged();
 }
 
 DataHandler::Cases DataHandler::cases() const
 {
-    ///qDebug() << "cases()" << m_cases;
+    qDebug() << "cases()" << m_cases;
 
     return m_cases;
 }
 
 void DataHandler::setCases(const Cases index)
 {
-    ///qDebug() << "setCases()";
-    ///qDebug() << " index:" << index;
+    qDebug() << "setCases()";
+    qDebug() << " index:" << index;
 
     /*
     if (m_casesList.indexOf(m_cases) == index || index == -1)
@@ -503,7 +504,7 @@ void DataHandler::setCases(const Cases index)
         m_showActive = false;
     }
 
-    ///qDebug() << " m_cases:" << m_cases;
+    qDebug() << " m_cases:" << m_cases;
 
 
     emit casesChanged();
@@ -511,16 +512,16 @@ void DataHandler::setCases(const Cases index)
 
 DataHandler::TimePeriod DataHandler::timePeriod() const
 {
-    ///qDebug() << " -> get m_timePeriod:" << m_timePeriod;
+    qDebug() << " -> get m_timePeriod:" << m_timePeriod;
 
     return m_timePeriod;
 }
 
 void DataHandler::setTimePeriod(const TimePeriod index)
 {
-    ///qDebug() << "setTimePeriod()";
-    ///qDebug() << " index:" << index;
-    ///qDebug() << " m_timePeriod:" << m_timePeriod;
+    qDebug() << "setTimePeriod()";
+    qDebug() << " index:" << index;
+    qDebug() << " m_timePeriod:" << m_timePeriod;
 
     /*
     if (m_timePeriod == index) {
@@ -534,7 +535,7 @@ void DataHandler::setTimePeriod(const TimePeriod index)
 
 
     m_timePeriod = index;
-    ///qDebug() << " <- set m_timePeriod:" << m_timePeriod;
+    qDebug() << " <- set m_timePeriod:" << m_timePeriod;
 
     emit timePeriodChanged();
 }
@@ -548,8 +549,8 @@ DataHandler::Scale DataHandler::scale() const
 
 void DataHandler::setScale(const Scale index)
 {
-    ///qDebug() << "setScale()";
-    ///qDebug() << " index:" << index;
+    qDebug() << "setScale()";
+    qDebug() << " index:" << index;
 
     /*
     if (m_scaleList.indexOf(m_scale) == index || index == -1)
@@ -569,7 +570,7 @@ void DataHandler::setScale(const Scale index)
 
 const QStringList &DataHandler::dateList() const
 {
-    ///qDebug() << "dateList()" << m_dateList;
+    qDebug() << "dateList()" << m_dateList;
 
     return m_dateList;
 }
@@ -584,14 +585,14 @@ void DataHandler::updateDateList()
 
 const QVariantList &DataHandler::recoveredArray() const
 {
-    ///qDebug() << "recoveredArray()" << m_recoveredArray;
+    qDebug() << "recoveredArray()" << m_recoveredArray;
 
     return m_recoveredArray;
 }
 
 void DataHandler::updateConfirmedArray()
 {
-    ///qDebug() << "updateConfirmedArray()" << m_showConfirmed;
+    qDebug() << "updateConfirmedArray()" << m_showConfirmed;
 
     /*
     if (m_country.isEmpty()) {
@@ -599,7 +600,7 @@ void DataHandler::updateConfirmedArray()
     }
     */
 
-    ///qDebug() << " m_country" << m_country;
+    qDebug() << " m_country" << m_country;
 
     QVector<int> confirmedArray = m_confirmedMap[m_country];
     if (confirmedArray.length() == 0)
@@ -607,7 +608,7 @@ void DataHandler::updateConfirmedArray()
         return;
     }
 
-    ///qDebug() << "m_recoveredMap[m_country]" << m_recoveredMap[m_country];
+    qDebug() << "m_recoveredMap[m_country]" << m_recoveredMap[m_country];
 
     m_confirmedArray.clear();
 
@@ -637,21 +638,21 @@ void DataHandler::updateConfirmedArray()
         }
     }
 
-    ///qDebug() << "m_confirmedArray" << m_confirmedArray;
+    qDebug() << "m_confirmedArray" << m_confirmedArray;
 
     emit confirmedArrayChanged();
 }
 
 const QVariantList &DataHandler::confirmedArray() const
 {
-    ///qDebug() << "confirmedArray()" << m_confirmedArray;
+    qDebug() << "confirmedArray()" << m_confirmedArray;
 
     return m_confirmedArray;
 }
 
 void DataHandler::updateRecoveredArray()
 {
-    ///qDebug() << "updateRecoveredArray()" << m_showRecovered;
+    qDebug() << "updateRecoveredArray()" << m_showRecovered;
 
     /*
     if (m_country.isEmpty()) {
@@ -659,7 +660,7 @@ void DataHandler::updateRecoveredArray()
     }
     */
 
-    ///qDebug() << " m_country" << m_country;
+    qDebug() << " m_country" << m_country;
 
     QVector<int> recoveredArray = m_recoveredMap[m_country];
     if (recoveredArray.length() == 0)
@@ -667,7 +668,7 @@ void DataHandler::updateRecoveredArray()
         return;
     }
 
-    ///qDebug() << "m_recoveredMap[m_country]" << m_recoveredMap[m_country];
+    qDebug() << "m_recoveredMap[m_country]" << m_recoveredMap[m_country];
 
     m_recoveredArray.clear();
 
@@ -697,7 +698,7 @@ void DataHandler::updateRecoveredArray()
         }
     }
 
-    ///qDebug() << "m_recoveredArray" << m_recoveredArray;
+    qDebug() << "m_recoveredArray" << m_recoveredArray;
 
     emit recoveredArrayChanged();
 }
@@ -709,7 +710,7 @@ const QVariantList &DataHandler::deathsArray() const
 
 void DataHandler::updateDeathsArray()
 {
-    ///qDebug() << "updateDeathsArray()" << m_showDeaths;
+    qDebug() << "updateDeathsArray()" << m_showDeaths;
 
     /*
     if (m_country.isEmpty()) {
@@ -717,7 +718,7 @@ void DataHandler::updateDeathsArray()
     }
     */
 
-    ///qDebug() << " m_country" << m_country;
+    qDebug() << " m_country" << m_country;
 
     QVector<int> deathsArray = m_deathsMap[m_country];
     if (deathsArray.length() == 0)
@@ -725,7 +726,7 @@ void DataHandler::updateDeathsArray()
         return;
     }
 
-    ///qDebug() << "m_deathsMap[m_country]" << m_activeMap[m_country];
+    qDebug() << "m_deathsMap[m_country]" << m_activeMap[m_country];
 
     m_deathsArray.clear();
 
@@ -755,7 +756,7 @@ void DataHandler::updateDeathsArray()
         }
     }
 
-    ///qDebug() << "m_deathsArray" << m_deathsArray;
+    qDebug() << "m_deathsArray" << m_deathsArray;
 
     emit deathsArrayChanged();
 }
@@ -767,7 +768,7 @@ const QVariantList &DataHandler::activeArray() const
 
 void DataHandler::updateActiveArray()
 {
-    ///qDebug() << "updateActiveArray()" << m_showActive;
+    qDebug() << "updateActiveArray()" << m_showActive;
 
     /*
     if (m_country.isEmpty()) {
@@ -775,7 +776,7 @@ void DataHandler::updateActiveArray()
     }
     */
 
-    ///qDebug() << " m_country" << m_country;
+    qDebug() << " m_country" << m_country;
 
     QVector<int> activeArray = m_activeMap[m_country];
     if (activeArray.length() == 0)
@@ -783,7 +784,7 @@ void DataHandler::updateActiveArray()
         return;
     }
 
-    ///qDebug() << "m_activeMap[m_country]" << m_activeMap[m_country];
+    qDebug() << "m_activeMap[m_country]" << m_activeMap[m_country];
 
     m_activeArray.clear();
 
@@ -813,21 +814,21 @@ void DataHandler::updateActiveArray()
         }
     }
 
-    ///qDebug() << "m_activeArray" << m_activeArray;
+    qDebug() << "m_activeArray" << m_activeArray;
 
     emit activeArrayChanged();
 }
 
 void DataHandler::processData()
 {
-    ///qDebug() << "processData()";
+    qDebug() << "processData()";
 
-    ///qDebug() << " m_totalReceived" << m_totalReceived << "m_recoveredReceived" << m_recoveredReceived << "m_deathsReceived" << m_deathsReceived;
+    qDebug() << " m_totalReceived" << m_totalReceived << "m_recoveredReceived" << m_recoveredReceived << "m_deathsReceived" << m_deathsReceived;
 
     if (m_totalReceived != true || m_recoveredReceived != true || m_deathsReceived != true)
         return;
 
-    ///qDebug() << " m_downloadingState" << m_downloadingState;
+    qDebug() << " m_downloadingState" << m_downloadingState;
 
     m_loadingState = false;
     emit loadingStateChanged();
@@ -862,9 +863,9 @@ void DataHandler::processData()
 
 void DataHandler::processDate()
 {
-    ///qDebug() << "processDate()";
+    qDebug() << "processDate()";
 
-    ///qDebug() << " m_country" << m_country;
+    qDebug() << " m_country" << m_country;
 
     m_dateList.clear();
     QStringList list = m_totalHeaders.simplified().split(",");
@@ -876,15 +877,15 @@ void DataHandler::processDate()
         m_dateList << date.toString(formatOut);
     }
 
-    ///qDebug() << "m_totalHeaders:" << m_totalHeaders;
-    ///qDebug() << "m_dateList:" << m_dateList;
+    qDebug() << "m_totalHeaders:" << m_totalHeaders;
+    qDebug() << "m_dateList:" << m_dateList;
 
     emit dateListChanged();
 }
 
 void DataHandler::processTotal()
 {
-    ///qDebug() << "processTotal()";
+    qDebug() << "processTotal()";
 
     for (const auto &row : m_totalRows) {
         QStringList list = row.split(",");
@@ -911,7 +912,7 @@ void DataHandler::processTotal()
             }
         }
 
-        ///qDebug() << "m_confirmedMap[country]:" << data;
+        qDebug() << "m_confirmedMap[country]:" << data;
 
         const QString countryName = list[1];
         const Country country = m_countryMap.key(countryName, UnknownCountry);
@@ -923,7 +924,7 @@ void DataHandler::processTotal()
 
 void DataHandler::processRecovered()
 {
-    ///qDebug() << "processRecovered()";
+    qDebug() << "processRecovered()";
 
     for (const auto &row : m_recoveredRows) {
         QStringList list = row.split(",");
@@ -950,7 +951,7 @@ void DataHandler::processRecovered()
             }
         }
 
-        ///qDebug() << "m_recoveredMap[country]:" << data;
+        qDebug() << "m_recoveredMap[country]:" << data;
 
         const QString countryName = list[1];
         const Country country = m_countryMap.key(countryName, UnknownCountry);
@@ -962,7 +963,7 @@ void DataHandler::processRecovered()
 
 void DataHandler::processDeaths()
 {
-    ///qDebug() << "processDeaths()";
+    qDebug() << "processDeaths()";
 
     for (const auto &row : m_deathsRows) {
         QStringList list = row.split(",");
@@ -989,7 +990,7 @@ void DataHandler::processDeaths()
             }
         }
 
-        ///qDebug() << "m_deathsMap[country]:" << data;
+        qDebug() << "m_deathsMap[country]:" << data;
 
         const QString countryName = list[1];
         const Country country = m_countryMap.key(countryName, UnknownCountry);
@@ -1001,7 +1002,7 @@ void DataHandler::processDeaths()
 
 void DataHandler::processActive()
 {
-    ///qDebug() << "processActive()";
+    qDebug() << "processActive()";
 
     for (const Country &country : m_confirmedMap.keys()) {
         QVector<int> total = m_confirmedMap[country];
@@ -1021,7 +1022,7 @@ void DataHandler::processActive()
 
 void DataHandler::loadDataFromLocalResourcesStarted()
 {
-    ///qDebug() << "loadDataFromLocalResourcesStarted()";
+    qDebug() << "loadDataFromLocalResourcesStarted()";
 
     m_loadingState = true;
     emit loadingStateChanged();
@@ -1037,7 +1038,7 @@ void DataHandler::loadDataFromLocalResourcesStarted()
 
 void DataHandler::loadTotal()
 {
-    ///qDebug() << "loadTotal()";
+    qDebug() << "loadTotal()";
 
     QFile file(m_totalPath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -1050,7 +1051,7 @@ void DataHandler::loadTotal()
 
 void DataHandler::loadRecovered()
 {
-    ///qDebug() << "loadRecovered()";
+    qDebug() << "loadRecovered()";
 
     QFile file(m_recoveredPath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -1063,7 +1064,7 @@ void DataHandler::loadRecovered()
 
 void DataHandler::loadDeaths()
 {
-    ///qDebug() << "loadDeaths()";
+    qDebug() << "loadDeaths()";
 
     QFile file(m_deathsPath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -1076,30 +1077,30 @@ void DataHandler::loadDeaths()
 
 void DataHandler::downloadTotalStarted()
 {
-    ///qDebug() << "downloadTotalStarted()";
+    qDebug() << "downloadTotalStarted()";
 
     m_totalDownloadManager.get(QNetworkRequest(QUrl(m_totalUrl)));
 }
 
 void DataHandler::downloadRecoveredStarted()
 {
-    ///qDebug() << "downloadRecoveredStarted()";
+    qDebug() << "downloadRecoveredStarted()";
 
     m_recoveredDownloadManager.get(QNetworkRequest(QUrl(m_recoveredUrl)));
 }
 
 void DataHandler::downloadDeathsStarted()
 {
-    ///qDebug() << "downloadDeathsStarted()";
+    qDebug() << "downloadDeathsStarted()";
 
     m_deathsDownloadManager.get(QNetworkRequest(QUrl(m_deathsUrl)));
 }
 
 void DataHandler::onDownloadTotalFinished(QNetworkReply *reply)
 {
-    ///qDebug() << "onDownloadTotalFinished()";
+    qDebug() << "onDownloadTotalFinished()";
 
-    ///qDebug() << "reply->error()" << reply->error();
+    qDebug() << "reply->error()" << reply->error();
 
     if (reply->error() != QNetworkReply::NoError)
         return;
@@ -1111,9 +1112,9 @@ void DataHandler::onDownloadTotalFinished(QNetworkReply *reply)
 
 void DataHandler::onDownloadRecoveredFinished(QNetworkReply *reply)
 {
-    ///qDebug() << "onDownloadRecoveredFinished()";
+    qDebug() << "onDownloadRecoveredFinished()";
 
-    ///qDebug() << "reply->error()" << reply->error();
+    qDebug() << "reply->error()" << reply->error();
 
     if (reply->error() != QNetworkReply::NoError)
         return;
@@ -1125,9 +1126,9 @@ void DataHandler::onDownloadRecoveredFinished(QNetworkReply *reply)
 
 void DataHandler::onDownloadDeathsFinished(QNetworkReply *reply)
 {
-    ///qDebug() << "onDownloadDeathsFinished()";
+    qDebug() << "onDownloadDeathsFinished()";
 
-    ///qDebug() << "reply->error()" << reply->error();
+    qDebug() << "reply->error()" << reply->error();
 
     if (reply->error() != QNetworkReply::NoError)
         return;
@@ -1139,7 +1140,7 @@ void DataHandler::onDownloadDeathsFinished(QNetworkReply *reply)
 
 void DataHandler::preprocessTotal(const QByteArray &rawContent)
 {
-    ///qDebug() << "preprocessTotal()";
+    qDebug() << "preprocessTotal()";
 
     QStringList list = QString::fromLocal8Bit(rawContent).split('\n', QString::SkipEmptyParts);
 
@@ -1157,7 +1158,7 @@ void DataHandler::preprocessTotal(const QByteArray &rawContent)
 
 void DataHandler::preprocessRecovered(const QByteArray &rawContent)
 {
-    ///qDebug() << "preprocessRecovered()";
+    qDebug() << "preprocessRecovered()";
 
     QStringList list = QString::fromLocal8Bit(rawContent).split('\n', QString::SkipEmptyParts);
 
@@ -1175,7 +1176,7 @@ void DataHandler::preprocessRecovered(const QByteArray &rawContent)
 
 void DataHandler::preprocessDeaths(const QByteArray &rawContent)
 {
-    ///qDebug() << "preprocessDeaths()";
+    qDebug() << "preprocessDeaths()";
 
     QStringList list = QString::fromLocal8Bit(rawContent).split('\n', QString::SkipEmptyParts);
 
@@ -1192,7 +1193,7 @@ void DataHandler::preprocessDeaths(const QByteArray &rawContent)
 
 void DataHandler::downloadDataFromWebStarted()
 {
-    ///qDebug() << "downloadDataFromWebStarted()";
+    qDebug() << "downloadDataFromWebStarted()";
 
     m_downloadingState = true;
     emit downloadingStateChanged();
@@ -1209,7 +1210,7 @@ void DataHandler::downloadDataFromWebStarted()
 
 void DataHandler::detectClientCountryStarted()
 {
-    ///qDebug() << "detectClientCountryStarted()";
+    qDebug() << "detectClientCountryStarted()";
 
     // https://medium.com/@ipdata_co/what-is-the-best-commercial-ip-geolocation-api-d8195cda7027
 
@@ -1224,35 +1225,35 @@ void DataHandler::detectClientCountryStarted()
 
 void DataHandler::onDetectClientCountryFinished(QNetworkReply *reply)
 {
-    ///qDebug() << "onDetectClientCountryFinished()";
+    qDebug() << "onDetectClientCountryFinished()";
 
-    ///qDebug() << " reply->error()" << reply->error();
+    qDebug() << " reply->error()" << reply->error();
 
     if (reply->error() != QNetworkReply::NoError)
         return;
 
     const QByteArray content = reply->readAll();
 
-    ///qDebug() << " content" << content;
+    qDebug() << " content" << content;
 
     setClientCountry(content);
 }
 
 void DataHandler::setClientCountry(const QByteArray &rawContent)
 {
-    ///qDebug() << "setClientCountry()";
+    qDebug() << "setClientCountry()";
 
     const QStringList list = QString::fromLocal8Bit(rawContent).split('\n', QString::SkipEmptyParts);
 
-    ///qDebug() << " list" << list;
+    qDebug() << " list" << list;
 
     const QJsonDocument json = QJsonDocument::fromJson(rawContent);
     const QJsonObject root = json.object();
     const QString countryName = root.value("country").toString();
     const Country country = m_countryMap.key(countryName, UnknownCountry);
 
-    ///qDebug() << " countryName" << countryName;
-    ///qDebug() << " country" << country;
+    qDebug() << " countryName" << countryName;
+    qDebug() << " country" << country;
 
     setCountry(country);
 }
@@ -1261,7 +1262,7 @@ void DataHandler::setClientCountry(const QByteArray &rawContent)
 
 void DataHandler::onCountryChanged()
 {
-    ///qDebug() << "onCountryChanged()";
+    qDebug() << "onCountryChanged()";
 
     updateConfirmedArray();
     updateRecoveredArray();
@@ -1302,7 +1303,7 @@ void DataHandler::onScaleChanged()
 
 void DataHandler::onShowConfirmedChanged()
 {
-    ///qDebug() << "onShowConfirmedChanged()";
+    qDebug() << "onShowConfirmedChanged()";
 
     updateConfirmedArray();
     updateYMax();
@@ -1311,7 +1312,7 @@ void DataHandler::onShowConfirmedChanged()
 
 void DataHandler::onShowRecoveredChanged()
 {
-    ///qDebug() << "onShowRecoveredChanged()";
+    qDebug() << "onShowRecoveredChanged()";
 
     updateRecoveredArray();
     updateYMax();
@@ -1320,7 +1321,7 @@ void DataHandler::onShowRecoveredChanged()
 
 void DataHandler::onShowActiveChanged()
 {
-    ///qDebug() << "onShowActiveChanged()";
+    qDebug() << "onShowActiveChanged()";
 
     updateActiveArray();
     updateYMax();
@@ -1329,7 +1330,7 @@ void DataHandler::onShowActiveChanged()
 
 void DataHandler::onShowDeathsChanged()
 {
-    ///qDebug() << "onShowDeathsChanged()";
+    qDebug() << "onShowDeathsChanged()";
 
     updateDeathsArray();
     updateYMax();
