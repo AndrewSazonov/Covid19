@@ -1212,15 +1212,7 @@ void DataHandler::detectClientCountryStarted()
 {
     qDebug() << "detectClientCountryStarted()";
 
-    // https://medium.com/@ipdata_co/what-is-the-best-commercial-ip-geolocation-api-d8195cda7027
-
-    // "https://ipapi.co/json" -> "country_name" : works, but show divide by zero runtime error in browsers
-    // "https://api.ipdata.co/?api-key=test" -> "country_name" : works
-    // "https://ip-api.com/json" -> "country" : not checked yet
-    // "http://ipgeolocation.com/?json=1" -> "country" : not checked yet
-    // "https://api.ipgeolocationapi.com/geolocate" -> "name" : not checked yet
-
-    m_clientCountryManager.get(QNetworkRequest(QUrl("http://ipgeolocation.com/?json=1")));
+    m_clientCountryManager.get(QNetworkRequest(QUrl(m_clientCountryApiUrl)));
 }
 
 void DataHandler::onDetectClientCountryFinished(QNetworkReply *reply)
@@ -1249,7 +1241,7 @@ void DataHandler::setClientCountry(const QByteArray &rawContent)
 
     const QJsonDocument json = QJsonDocument::fromJson(rawContent);
     const QJsonObject root = json.object();
-    const QString countryName = root.value("country").toString();
+    const QString countryName = root.value(m_clientCountryApiKey).toString();
     const Country country = m_countryMap.key(countryName, UnknownCountry);
 
     qDebug() << " countryName" << countryName;
