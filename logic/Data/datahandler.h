@@ -371,11 +371,11 @@ private:
 
     // "https://ipapi.co/json" -> "country_name" : works, but shows "divide by zero" runtime error in browsers
     // "https://api.ipdata.co/?api-key=test" -> "country_name" : works, but also shows "divide by zero" runtime error in browsers
-    // "http://ip-api.com/json" -> "country" : not checked yet
+    // "http://ip-api.com/json" -> "country" : works, but also shows "divide by zero" runtime error in browsers
     // "http://ipgeolocation.com/?json=1" -> "country" : works for http, but shows "Blocked loading mixed active content" error if main page is https
     // "https://api.ipgeolocationapi.com/geolocate" -> "name" : Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://api.ipgeolocationapi.com/geolocate. (Reason: CORS header 'Access-Control-Allow-Origin' does not match 'https://www.hollandandbarrett.com')
 
-    QString m_clientCountryApiUrl = "http://ip-api.com/json";
+    QString m_clientCountryApiUrl = "http://ipgeolocation.com/?json=1";
     QString m_clientCountryApiKey = "country";
 
 };
