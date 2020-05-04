@@ -46,4 +46,4 @@ Makefile
 build/debug
 build/release
 build/profile
-build/ios
+build/ios*
