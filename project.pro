@@ -1,7 +1,7 @@
 TEMPLATE = app
 
 # Application name
-TARGET = covidist
+TARGET = covid19
 
 CONFIG += c++14
 

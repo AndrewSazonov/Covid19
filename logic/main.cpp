@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<DataHandler>("Data", 1, 0, "DataHandler");
 
     QApplication app(argc, argv);
-    app.setApplicationName("Covidist");
+    app.setApplicationName("Covid19");
     app.setOrganizationName("Apptimity");
     app.setOrganizationDomain("apptimity.com");
     app.setWindowIcon(QIcon(":/gui/Resources/Icon/App.svg"));

@@ -65,7 +65,7 @@ ApplicationWindow {
                     MouseArea {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
-                        onClicked: Qt.openUrlExternally("http://covidist.apptimity.com")
+                        onClicked: Qt.openUrlExternally("http://covid19.apptimity.com")
                     }
                 }
 
@@ -75,7 +75,7 @@ ApplicationWindow {
                     font.family: Globals.Fonts.sans
                     font.pixelSize: Globals.Sizes.fontInPixels
                     color: Globals.Colors.appBarButtonForeground
-                    text: qsTr("Version") + " 0.4.1 (4 May 2020)"
+                    text: qsTr("Version") + " 0.4.2 (4 May 2020)"
                 }
             }
 

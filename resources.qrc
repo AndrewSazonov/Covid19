@@ -55,8 +55,8 @@
         <file>gui/Resources/Icon/App.svg</file>
         <file>gui/Resources/Image/LogoForDark.svg</file>
         <file>gui/Resources/Image/LogoForLight.svg</file>
-        <file>gui/Resources/Translations/covidist_ru.qm</file>
-        <file>gui/Resources/Translations/covidist_ru.ts</file>
+        <file>gui/Resources/Translations/covid19_ru.qm</file>
+        <file>gui/Resources/Translations/covid19_ru.ts</file>
         <file>data/time_series_covid19_confirmed_global.csv</file>
         <file>data/time_series_covid19_deaths_global.csv</file>
         <file>data/time_series_covid19_recovered_global.csv</file>

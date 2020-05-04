@@ -16,7 +16,7 @@ void Translator::selectLanguage(const QString &language)
     ///qDebug() << "language" << language << m_languages[language];
 
     QString languageCode = m_languages[language];
-    QString path = QString(":/gui/Resources/Translations/covidist_%1").arg(languageCode);
+    QString path = QString(":/gui/Resources/Translations/covid19_%1").arg(languageCode);
 
     ///qDebug() << "***********" << language << languageCode << path;
 

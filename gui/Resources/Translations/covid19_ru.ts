@@ -353,62 +353,62 @@
         <translation>Логарифмическая</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1264"/>
+        <location filename="../../main.qml" line="1269"/>
         <source>Jan</source>
         <translation>Янв</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1265"/>
+        <location filename="../../main.qml" line="1270"/>
         <source>Feb</source>
         <translation>Фев</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1266"/>
+        <location filename="../../main.qml" line="1271"/>
         <source>Mar</source>
         <translation>Мар</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1267"/>
+        <location filename="../../main.qml" line="1272"/>
         <source>Apr</source>
         <translation>Апр</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1268"/>
+        <location filename="../../main.qml" line="1273"/>
         <source>May</source>
         <translation>Май</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1269"/>
+        <location filename="../../main.qml" line="1274"/>
         <source>Jun</source>
         <translation>Июн</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1270"/>
+        <location filename="../../main.qml" line="1275"/>
         <source>Jul</source>
         <translation>Июл</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1271"/>
+        <location filename="../../main.qml" line="1276"/>
         <source>Aug</source>
         <translation>Авг</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1272"/>
+        <location filename="../../main.qml" line="1277"/>
         <source>Sep</source>
         <translation>Сен</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1273"/>
+        <location filename="../../main.qml" line="1278"/>
         <source>Oct</source>
         <translation>Окт</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1274"/>
+        <location filename="../../main.qml" line="1279"/>
         <source>Nov</source>
         <translation>Ноя</translation>
     </message>
     <message>
-        <location filename="../../main.qml" line="1275"/>
+        <location filename="../../main.qml" line="1280"/>
         <source>Dec</source>
         <translation>Дек</translation>
     </message>
