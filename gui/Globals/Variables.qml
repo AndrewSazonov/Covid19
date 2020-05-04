@@ -12,7 +12,7 @@ QtObject {
     // Animation time
     property int themeChangeTime: 1000
     property int translationChangeTime: 300
-    property int introAnimationDuration: 2000
+    property int introAnimationDuration: 0
     property int chartAnimationDuration: 1000
 
     // Loggin levels
@@ -28,7 +28,7 @@ QtObject {
     // Default
     property int countryIndex: DataHandler.USCountry
     property int casesIndex: DataHandler.TotalCases
-    property int timePeriodIndex: DataHandler.OneMonthTimePeriod
+    property int timePeriodIndex: DataHandler.TwoMonthsTimePeriod
     property int scaleIndex: DataHandler.LinearScale
 
     property bool confirmedRadioButtonState: true

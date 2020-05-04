@@ -75,7 +75,7 @@ ApplicationWindow {
                     font.family: Globals.Fonts.sans
                     font.pixelSize: Globals.Sizes.fontInPixels
                     color: Globals.Colors.appBarButtonForeground
-                    text: qsTr("Version") + " 0.4.0 (27 Apr 2020)"
+                    text: qsTr("Version") + " 0.4.1 (4 May 2020)"
                 }
             }
 
@@ -997,6 +997,11 @@ ApplicationWindow {
 
         anchors.fill: parent
         color: Globals.Colors.mainAreaBackground
+
+        Label {
+            anchors.centerIn: parent
+            text: "Loading data..."
+        }
 
         MouseArea {
             anchors.fill: parent
