@@ -65,7 +65,7 @@ ApplicationWindow {
                     MouseArea {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
-                        onClicked: Qt.openUrlExternally("https://covidist.apptimity.com")
+                        onClicked: Qt.openUrlExternally("http://covidist.apptimity.com")
                     }
                 }
 
