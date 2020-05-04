@@ -370,13 +370,13 @@ private:
     // https://medium.com/@ipdata_co/what-is-the-best-commercial-ip-geolocation-api-d8195cda7027
 
     // "https://ipapi.co/json" -> "country_name" : works, but shows "divide by zero" runtime error in browsers
-    // "https://api.ipdata.co/?api-key=test" -> "country_name" : works
+    // "https://api.ipdata.co/?api-key=test" -> "country_name" : works, but also shows "divide by zero" runtime error in browsers
     // "http://ip-api.com/json" -> "country" : not checked yet
     // "http://ipgeolocation.com/?json=1" -> "country" : works for http, but shows "Blocked loading mixed active content" error if main page is https
     // "https://api.ipgeolocationapi.com/geolocate" -> "name" : not checked yet
 
-    QString m_clientCountryApiUrl = "https://api.ipdata.co/?api-key=test";
-    QString m_clientCountryApiKey = "country_name";
+    QString m_clientCountryApiUrl = "https://api.ipgeolocationapi.com/geolocate";
+    QString m_clientCountryApiKey = "name";
 
 };
 
