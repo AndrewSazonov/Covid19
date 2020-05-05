@@ -75,7 +75,7 @@ ApplicationWindow {
                     font.family: Globals.Fonts.sans
                     font.pixelSize: Globals.Sizes.fontInPixels
                     color: Globals.Colors.appBarButtonForeground
-                    text: qsTr("Version") + " 0.4.2 (4 May 2020)"
+                    text: qsTr("Version") + " 0.4.3 (6 May 2020)"
                 }
             }
 
@@ -973,6 +973,7 @@ ApplicationWindow {
 
     ////////////////////////////////////////////////////////////////////////
 
+    /*
     Rectangle {
         visible: Qt.platform.pluginName === "wasm"
         anchors.left: parent.left
@@ -989,6 +990,7 @@ ApplicationWindow {
         height: 1
         color: Globals.Colors.appBarBorder
     }
+    */
 
     ////////////////////////////////////////////////////////////////////////
 
@@ -1000,7 +1002,7 @@ ApplicationWindow {
 
         Label {
             anchors.centerIn: parent
-            text: "Loading data..."
+            text: "Please wait..."
         }
 
         MouseArea {
